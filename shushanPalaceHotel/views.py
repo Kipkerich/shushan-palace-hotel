@@ -21,4 +21,7 @@ def menu(request):
     return render(request, 'menu.html')
 
 
+def room(request):
+    return render(request, 'room.html')
+
 
