@@ -22,10 +22,10 @@ def menu(request):
 
 
 def room(request):
-    return render(request, 'room.html')
+    return render(request, 'rooms/room.html')
 
 
 def addRoom(request):
-    return render(request, 'add-room.html')
+    return render(request, 'rooms/add-room.html')
 
 

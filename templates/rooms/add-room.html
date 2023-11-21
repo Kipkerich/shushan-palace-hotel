@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% block content %}
 <h1> Hello, {{ user.username }}</h1>
-
+    <div>
     <a href="{% url 'logout-url' %}">Logout</a>
-
+    </div>
 {% endblock %}
