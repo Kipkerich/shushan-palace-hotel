@@ -57,14 +57,22 @@
           <li><a class="nav-link scrollto" href="{% url 'gallery-url' %}">Gallery</a></li>
 
           <li><a class="nav-link scrollto" href="{% url 'contact-url' %}">Contact</a></li>
+
+            <li><a class="nav-link scrollto" href="{% url 'room-url' %}">Room</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="{% url 'room-url' %}">Book a Room</a>
+
 
     </div>
   </header><!-- End Header -->
+<p class="text-center">
+   {% for message in messages %}
+   	{{ message }}
+   {% endfor %}
+
+</p>
 {% block content %}
 
 {% endblock %}

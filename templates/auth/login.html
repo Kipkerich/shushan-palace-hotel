@@ -4,15 +4,15 @@
 {% load crispy_forms_filters %}
 {% block content %}
     <div class=" row d-flex col-6 m-auto">
-        <h1 class="text-info text-center">Register Here</h1>
-        <form action="{% url 'registration-url' %}" method="post">
+        <h1 class="text-info text-center">Login Here</h1>
+        <form action="{% url 'login-url' %}" method="post">
             {% csrf_token %}
             <fied-set>
-                <legend class="border-bottom mb-4">Join Today!</legend>
+                <legend class="border-bottom mb-4">Welcome!</legend>
                 {{ form|crispy }}
             </fied-set>
             <div class="form-group">
-                <input class="btn btn-info" value="register" type="submit">
+                <input class="btn btn-info" value="Login" type="submit">
 
             </div>
         </form>

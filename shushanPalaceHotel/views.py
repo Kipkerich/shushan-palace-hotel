@@ -25,3 +25,7 @@ def room(request):
     return render(request, 'room.html')
 
 
+def addRoom(request):
+    return render(request, 'add-room.html')
+
+
