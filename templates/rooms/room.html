@@ -1,37 +1,24 @@
 {% extends 'master.html' %}
+{% load static %}
 {% block content %}
 <h1>Available Room</h1>
+   {% for room in rooms %}
 <div class="card-group">
-  <div class="card">
-    <img src="../../static/assets/img/room.jpg" class="card-img-top" alt="...">
+
+   <div class="card">
+    <img src="{% static '../' %}{{ room.image }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title">{{ room.name }}</h5>
+        <h6 class="card-body">{{ room.size }}</h6>
+      <p class="card-text">{{ room.desc }}</p><br>
+         <p class="card-text">{{ room.price }}</p><br>
     </div>
     <div class="card-footer">
-      <small class="text-muted"><button type="button" class="btn">View</button></small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="../../static/assets/img/room.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <button type="button" class="btn">View</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="../../static/assets/img/room.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-     <button type="button" class="btn">View</button>
+        <a href="/rooms/update/{{ room.id }}" class="btn btn-info">Update</a>
+        <a href="/rooms/pay/{{ room.id }}" class=" btn btn-dark">Book</a>
+        <a href="/rooms/delete/{{ room.id }}" class="btn btn-danger">Remove</a>
     </div>
   </div>
 </div>
-
+{% endfor %}
 {% endblock %}

@@ -1,4 +1,23 @@
 {% extends 'master.html' %}
+{% load  static %}
 {% block content %}
     <h1>Update room</h1>
+    <div class="row d-flex col-4 m-auto">
+        <form method="post" action="/rooms/update/{{ room.id }}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+                <legend class="border-bottom mb-4">Update Room</legend>
+            <input value="{{ room.name }}" placeholder="Room name" class="form-control" name="name" type="text"><br>
+            <input value="{{ room.size }}" placeholder="Room size" class="form-control" name="size" type="text"><br>
+            <input  value="{{ room.price }}" placeholder="Price" class="form-control" name="price" type="text"><br>
+            <input  value="{{ room.desc }}" placeholder="Description" class="form-control" name="desc" type="text"><br>
+            <label>Room Image</label><br>
+                <img src="{% static '../' %}{{ room.image }}" class="card-img-top" alt="..."><br>
+            <input  class="form-control" name="image" type="file"><br>
+            </fieldset>
+            <div class="form-group">
+                <input  class="btn btn-info mt-4" value="Update" type="submit">
+            </div>
+        </form>
+    </div>
 {% endblock %}

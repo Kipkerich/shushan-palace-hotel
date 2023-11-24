@@ -25,7 +25,7 @@ urlpatterns = [
     path('gallery/',my_views.gallery, name='gallery-url'),
     path('menu/',my_views.menu, name='menu-url'),
     path('contact/', my_views.contact, name='contact-url'),
-    path('room/', my_views.room, name='room-url'),
+    # path('room/', my_views.room, name='room-url'),
     path('auth/', include('auth.urls')),
     path('add-room/', my_views.addRoom, name= 'add-room-url'),
     path('rooms/', include('rooms.urls')),
